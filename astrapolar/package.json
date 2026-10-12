@@ -1,0 +1,31 @@
+{
+  "name": "astrapolar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AstraPolar — Offline-First Digital Twin & Operations Platform for Maitri and Bharati Antarctic Research Stations",
+  "author": "Divyanshu Gupta <divyanshu0132@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshu-0132/AstraPolar.git"
+  },
+  "workspaces": [
+    "packages/shared",
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev": "npm run dev:api & npm run dev:web",
+    "db:migrate": "npm run db:migrate --workspace=apps/api",
+    "db:seed": "npm run db:seed --workspace=apps/api",
+    "db:setup": "npm run db:setup --workspace=apps/api"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
